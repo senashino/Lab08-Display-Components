@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 #include "esp_log.h"
 #include "display.h"
 
@@ -7,33 +6,25 @@ static const char *TAG = "DISPLAY";
 
 void display_init(void)
 {
-    ESP_LOGI(TAG, "🖥️  Display Component initialized");
-    ESP_LOGI(TAG, "📍 File: %s, Line: %d", __FILE__, __LINE__);
-    ESP_LOGI(TAG, "✅ Virtual display ready for operation");
+    ESP_LOGI(TAG, "🖥️  Display initialized from file: %s, line: %d", __FILE__, __LINE__);
+    ESP_LOGI(TAG, "💡 Display module ready");
 }
 
-void display_show_sensor_data(float temperature, float humidity, float heat_index)
+void display_show_message(const char* message)
 {
-    ESP_LOGI(TAG, "┌─────────────────────────────────┐");
-    ESP_LOGI(TAG, "│        SENSOR DATA DISPLAY      │");
-    ESP_LOGI(TAG, "├─────────────────────────────────┤");
-    ESP_LOGI(TAG, "│ 🌡️  Temperature: %6.2f°C      │", temperature);
-    ESP_LOGI(TAG, "│ 💧 Humidity:    %6.2f%%       │", humidity);
-    ESP_LOGI(TAG, "│ 🔥 Heat Index:  %6.2f        │", heat_index);
-    ESP_LOGI(TAG, "└─────────────────────────────────┘");
+    ESP_LOGI(TAG, "📢 Displaying from file: %s, line: %d", __FILE__, __LINE__);
+    ESP_LOGI(TAG, "📺 Message: %s", message);
 }
 
-void display_show_status(const char* status)
+void display_show_data(float value1, float value2)
 {
-    ESP_LOGI(TAG, "┌─────────────────────────────────┐");
-    ESP_LOGI(TAG, "│         SYSTEM STATUS           │");
-    ESP_LOGI(TAG, "├─────────────────────────────────┤");
-    ESP_LOGI(TAG, "│ Status: %-23s │", status);
-    ESP_LOGI(TAG, "└─────────────────────────────────┘");
+    ESP_LOGI(TAG, "📊 Data display from file: %s, line: %d", __FILE__, __LINE__);
+    ESP_LOGI(TAG, "📈 Value 1: %.2f", value1);
+    ESP_LOGI(TAG, "📉 Value 2: %.2f", value2);
 }
 
-void display_clear(void)
+void display_clear_screen(void)
 {
-    ESP_LOGI(TAG, "🧹 Display cleared");
-    ESP_LOGI(TAG, "");
+    ESP_LOGI(TAG, "🧹 Screen cleared from file: %s, line: %d", __FILE__, __LINE__);
+    ESP_LOGI(TAG, "✨ Display ready for new content");
 }
