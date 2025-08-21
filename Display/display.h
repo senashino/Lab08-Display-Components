@@ -11,19 +11,22 @@ extern "C" {
 void display_init(void);
 
 /**
- * @brief Show sensor data on display
+ * @brief Show message on display
+ * @param message Text message to display
  */
-void display_show_sensor_data(float temperature, float humidity, float heat_index);
+void display_show_message(const char* message);
 
 /**
- * @brief Show system status
+ * @brief Show numeric data on display
+ * @param value1 First value to display
+ * @param value2 Second value to display
  */
-void display_show_status(const char* status);
+void display_show_data(float value1, float value2);
 
 /**
- * @brief Clear display
+ * @brief Clear display screen
  */
-void display_clear(void);
+void display_clear_screen(void);
 
 #ifdef __cplusplus
 }
